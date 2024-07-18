@@ -41,6 +41,27 @@ document.addEventListener('DOMContentLoaded',() => {
             addTask();
         }
     })
+
+    // retrieve
+    function loadTasks() {
+        const storedTasks = localStorage.getItem('tasks');
+        if (storedTasks) {
+            const tasksArray = JSON.parse(storedTasks);
+            tasksArray.forEach(taskText => {
+                const newTask = document.createElement('li');
+                newTask.textContent = taskText;
+                const removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.className = 'remove-btn';
+                removeButton.onclick = function () {
+                    taskList.removeChild(newTask);
+                    saveTasks();
+                }
+                newTask.appendChild(removeButton);
+                taskList.appendChild(newTask);
+            })
+        }
+    }
     // invoke the addTask function
     addTask();
 })
