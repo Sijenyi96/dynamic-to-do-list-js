@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded',() => {
         //add classlist
         const addButton = document.createElement('button');
         addButton.textContent = 'Add Task';
-        addButton.classList = 'add-task-btn';
+        addButton.classList.add = 'add-task-btn';
         // check if taskText is not empty
         if (taskText === '') {
             alert('Enter a new task');
