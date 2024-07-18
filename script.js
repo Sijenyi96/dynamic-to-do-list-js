@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded',() => {
     // create the addTask function
     function addTask() {
         const taskText = taskInput.value.trim();
+        //add classlist
+        const addButton = document.createElement('button');
+        addButton.textContent = 'Add Task';
+        addButton.classList = 'add-task-btn';
         // check if taskText is not empty
         if (taskText === '') {
             alert('Enter a new task');
@@ -19,7 +23,6 @@ document.addEventListener('DOMContentLoaded',() => {
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
         removeButton.className = 'remove-btn';
-        addButton.classList = 'add-task-btn';
         // assign onclick event
         removeButton.onclick = function(){
             taskList.removeChild(newTask);
