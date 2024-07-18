@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded',() => {
             addTask();
         }
     })
-
+    localStorage.setItem('tasks', JSON.stringify(tasks));
     // retrieve
     function loadTasks() {
         const storedTasks = localStorage.getItem('tasks');
